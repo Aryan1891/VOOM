@@ -59,6 +59,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
   }, [type, callRecordings]);
 
   if (isLoading) return <Loader />;
+  
 
   const calls = getCalls();
   const noCallsMessage = getNoCallsMessage();
@@ -79,7 +80,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
             title={
               (meeting as Call).state?.custom?.description.substring(0.20) ||
               (meeting as CallRecording).filename?.substring(0, 20) ||
-              'No Description'
+              'Personal Meeting'
             }
             date={
               (meeting as Call).state?.startsAt?.toLocaleString() ||
