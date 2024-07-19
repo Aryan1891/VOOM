@@ -1,9 +1,11 @@
 'use client';
+
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/clerk-react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import '@stream-io/video-react-sdk/dist/css/styles.css';
+import "react-datepicker/dist/react-datepicker.css";
 import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,8 @@ export default function RootLayout({
 
     <ClerkProvider 
      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || ''}
+     signInUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}
+     signUpUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL}
      appearance={{
       layout: {
         logoImageUrl: "/icons/yoom-logo.svg",
