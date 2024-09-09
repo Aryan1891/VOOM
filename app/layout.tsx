@@ -23,7 +23,7 @@ export default function RootLayout({
      signUpUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL}
      appearance={{
       layout: {
-        logoImageUrl: "/icons/yoom-logo.svg",
+        logoImageUrl: "/icons/logo.svg",
         socialButtonsVariant: "iconButton",
       },
       
